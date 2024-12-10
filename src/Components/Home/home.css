@@ -1,0 +1,271 @@
+.home {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgb(47, 106, 127);
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    mix-blend-mode: hard-light;
+  }
+
+  video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    object-fit: cover;
+  }
+
+  .homeContent {
+    width: 100%;
+    height: max-content;
+    padding: 8rem 1.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    margin: auto;
+    color: white;
+    z-index: 100;
+
+    .textDiv {
+      padding: 2rem 0;
+      text-align: center;
+
+      .smallText {
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+
+      .homeTitle {
+        position: relative;
+        font-size: 1.8rem;
+
+        &::after {
+          position: absolute;
+          content: " ";
+          background: aquamarine;
+          height: 5px;
+          width: 145px;
+          right: 0;
+          bottom: 5px;
+          z-index: -1;
+        }
+      }
+    }
+
+    .cardDiv {
+      /* display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 800px;
+      padding: 2rem 1rem;
+      background: white;
+      border-radius: 10px;
+      gap: 1rem; */
+      position: relative;
+      padding: 2rem 1rem;
+      background: white;
+      border-radius: 10px;
+      gap: 1rem;
+
+      label {
+        display: block;
+        color: hsl(240, 4%, 36%);
+        padding-bottom: 10px;
+        font-size: 13px;
+        font-weight: 500;
+      }
+
+      .label_total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .total {
+          color: hsl(240, 4%, 36%);
+          font-size: 18px;
+          padding-bottom: 10px;
+        }
+      }
+
+      .input {
+        height: 40px;
+        padding: 0 1rem;
+        background: rgb(239, 239, 239);
+        border-radius: 3rem;
+        display: flex;
+        align-items: center;
+
+        input {
+          background: none;
+          border: none;
+          outline: none;
+          width: 100%;
+          font-size: 13px;
+          font-weight: 500;
+
+          &::placeholder {
+            font-size: 13px;
+          }
+        }
+
+        .icon {
+          font-size: 18px;
+          color: hsl(199, 100%, 33%) !important;
+          margin-left: 10px;
+        }
+
+        .input[type="range"] {
+          background: blue;
+        }
+      }
+
+      .searchOptions {
+        position: absolute;
+        background: linear-gradient(
+          to right,
+          hsl(187, 85%, 43%),
+          hsl(199, 100%, 33%)
+        );
+        width: max-content;
+        bottom: -0.7rem;
+        column-gap: 0.8rem;
+        padding: 5px 1rem;
+        border-radius: 3rem;
+        left: 50%;
+        transform: translate(-50%);
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+
+        &:hover {
+          background: hsl(199, 100%, 33%);
+        }
+
+        .icon {
+          font-size: 18px;
+        }
+
+        span {
+          font-size: 13px;
+        }
+      }
+    }
+
+    .homeFooterIcons {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .icon {
+        font-size: 20px;
+        margin: 0 5px;
+        color: white;
+        font-weight: 600;
+
+        &:hover {
+          color: hsl(199, 100%, 33%);
+        }
+      }
+    }
+  }
+}
+
+/* MEDIA QUERIES ==========================> */
+@media screen and (max-width: 768px) {
+  .homeContent {
+    padding: 6rem 1rem 2rem;
+
+    .textDiv {
+      .homeTitle {
+        font-size: 1.5rem;
+      }
+    }
+
+    .cardDiv {
+      padding: 1.5rem;
+    }
+
+    .input {
+      height: 35px;
+
+      input {
+        font-size: 12px;
+      }
+    }
+
+    .searchOptions {
+      padding: 4px 0.8rem;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .homeContent {
+    padding: 4rem 0.5rem 1rem;
+
+    .textDiv {
+      .homeTitle {
+        font-size: 1.3rem;
+      }
+    }
+
+    .cardDiv {
+      padding: 1rem;
+    }
+
+    .input {
+      height: 30px;
+
+      input {
+        font-size: 11px;
+      }
+    }
+
+    .homeFooterIcons {
+      flex-direction: column;
+      align-items: center;
+      .icon {
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .home {
+    height: 95vh;
+
+    .homeContent {
+      padding-left: 0;
+      padding-right: 0;
+
+      .cardDiv {
+        padding: 2rem 1rem;
+
+        .input {
+          margin-bottom: 1rem;
+        }
+
+        .searchOptions {
+          padding: 8px 1rem;
+
+          span {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+}
